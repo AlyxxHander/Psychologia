@@ -2,7 +2,7 @@
 
 ## Live Website
 Demo aplikasi website dapat langsung diakses melalui link dibawah ini:
-* https://301-pixel-vault.infinityfreeapp.com/
+* https://psychologia-lsop.iblogger.org/
 
 ## Data Login
 * Email : director1@gmail.com
