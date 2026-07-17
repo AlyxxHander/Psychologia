@@ -1,0 +1,325 @@
+/**
+ * ============================================
+ *    Base Styles
+ * ============================================
+ */
+.btn {
+  border-radius: calc(infinity * 1px);
+  font-weight: bold;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/**
+ * ============================================
+ * Gradient Background and Text
+ * ============================================
+ */
+.gradient-bg {
+  background: linear-gradient(to right, #2A114B, #522959, #824D69);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #2A114B, #522959, #824D69, #DFB6B2);
+  /* Cut background to only stick to text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Make the original text color transparent so the background is visible */
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+/**
+ * ============================================
+ * Text Size
+ * ============================================
+ */
+.text-sl {
+  font-size: 0.9rem;
+}
+
+
+/**
+ * ============================================
+ * Page Animation Styles
+ * ============================================
+ */
+.invisible {
+  opacity: 0;
+}
+
+.fade-in-effect {
+  animation: fadeInSlideUp 0.4s ease-in-out forwards;
+}
+
+.wobble-fade-in-effect {
+  animation: wobbleFadeIn 0.90s cubic-bezier(0.1, 0.8, 0.2, 2) forwards;
+}
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wobbleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/**
+ * ============================================
+ * Toggle Switch Styles
+ * ============================================
+ */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+/* Sembunyikan checkbox asli */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/**
+ * ============================================
+ * Slider Styles
+ * ============================================
+ */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+/* Slider ON: Change background color when checked */
+input:checked+.slider {
+  background-color: #824D69;
+}
+
+/* Slider ON: Move the ball to the right */
+input:checked+.slider::before {
+  transform: translateX(24px);
+}
+
+
+/**
+ * ============================================
+ * Rich Text Content Styles
+ * ============================================
+ */
+.rich-text-content {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.rich-text-content>p:first-of-type::first-letter {
+  float: left;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  line-height: 1;
+}
+
+.rich-text-content blockquote {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  border-left: 5px solid #824D69;
+  color: #824D69;
+  background-color: #EDEDED;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.rich-text-content strong {
+  font-weight: bold;
+}
+
+.rich-text-content h1 {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.rich-text-content h2 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rich-text-content h3 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.rich-text-content h4 {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.rich-text-content h5 {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.rich-text-content h6 {
+  font-weight: bold;
+  font-size: 8px;
+}
+
+
+/**
+ * ============================================
+ * Toast Notification Styles
+ * ============================================
+ */
+#toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  min-width: 250px;
+  padding: 16px;
+  border-radius: 14px;
+  color: white;
+  font-weight: 500;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.success {
+  background-color: #1ebf5c;
+}
+
+.toast.error {
+  background-color: #d7371f;
+}
+
+.toast.info {
+  background-color: #1cce90;
+}
+
+
+/**
+ * ============================================
+ * Text Input Styles
+ * ============================================
+ */
+.input-field-transparent {
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  border-color: transparent;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.input-field.error {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+input.input-field {
+  height: 48px;
+}
+
+
+/**
+ * ============================================
+ * Textarea Input Styles
+ * ============================================
+ */
+textarea.input-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+
+/**
+ * ============================================
+ * Hide Scrollbar Styles
+ * ============================================
+ */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/**
+ * ============================================
+ * Laravel Wire:Navigate NProgress Loading Bar Styles
+ * ============================================
+ */
+#nprogress .bar {
+  background-color: #bd8beb !important;
+}
