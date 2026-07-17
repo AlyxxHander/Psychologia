@@ -33,7 +33,7 @@ graph TD
     Router -->|Guest/Auth| Middleware[Route Middleware]
     Middleware -->|Pass| Controller[Controllers\nAuthController, UserController, AdminController]
     Controller <-->|Read/Write| Model[Models / Eloquent ORM]
-    Model <-->|Query| Database[(Database MySQL / SQLite)]
+    Model <-->|Query| Database[(Database MySQL)]
     Controller -->|Render Data| View[Views / Blade Templates]
     View -->|HTML / CSS / JS| Client
 ```
@@ -48,7 +48,7 @@ Aplikasi ini secara ketat memisahkan hak akses menggunakan sistem proteksi rute 
 - **Backend Framework**: [Laravel 12.0](https://laravel.com/) (PHP ^8.2)
 - **Frontend & Styling**: Blade Templates, [Tailwind CSS v4](https://tailwindcss.com/), Vite, JavaScript
 - **Interactive UI**: Livewire ^4.3
-- **Database**: MySQL / SQLite (dikonfigurasi via `.env`)
+- **Database**: MySQL (dikonfigurasi via `.env`)
 - **Text Editor / WYSIWYG**: TinyMCE
 - **Asset/Media Management**: ImageKit
 
