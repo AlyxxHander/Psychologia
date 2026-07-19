@@ -197,7 +197,7 @@
   * PHP >= 8.2
   * Composer
   * Node.js & npm
-  * SQLite / MySQL Database
+  * MySQL Database
 
   ### Langkah Instalasi
   ```bash
@@ -215,7 +215,12 @@
   Buka file `.env` di root direktori proyek, lalu sesuaikan konfigurasi database dan ImageKit:
   ```env
   # Database Configuration (Contoh menggunakan SQLite)
-  DB_CONNECTION=sqlite
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=database_anda
+  DB_USERNAME=root
+  DB_PASSWORD=  
 
   # ImageKit Configuration (Wajib diisi jika ingin fitur unggah gambar berfungsi)
   IMAGEKIT_PUBLIC_KEY=your_public_key
@@ -229,8 +234,3 @@
   composer run dev
   ```
   Aplikasi dapat diakses melalui browser pada alamat [http://127.0.0.1:8000](http://127.0.0.1:8000).
-
-  ---
-
-  ## 📄 Lisensi
-  Proyek ini bersifat open-source dan dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT). Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode sumber aplikasi ini.
