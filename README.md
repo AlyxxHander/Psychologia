@@ -214,7 +214,7 @@
   ### Konfigurasi Environment (`.env`)
   Buka file `.env` di root direktori proyek, lalu sesuaikan konfigurasi database dan ImageKit:
   ```env
-  # Database Configuration (Contoh menggunakan SQLite)
+  # Database Configuration (Contoh menggunakan mysql)
   DB_CONNECTION=mysql
   DB_HOST=127.0.0.1
   DB_PORT=3306
